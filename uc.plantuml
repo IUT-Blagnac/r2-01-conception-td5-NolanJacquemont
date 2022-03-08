@@ -1,0 +1,21 @@
+@startuml UC
+
+usecase c as "Gérer ses chantiers"
+usecase a as "Gérer ses artisans"
+usecase ac as "Gérer quels artisans sont \naffectés à quels chantiers"
+usecase p as "Calculer automatiquement la \npaye d’un artisan donné \npour un chantier donné"
+
+actor Entreprise 
+
+'Pour aligner les 2 acteurs :
+c -[hidden]-> a
+a -[hidden]-> ac
+ac -[hidden]-> p
+
+Entreprise -> c
+Entreprise -> a
+Entreprise -> ac
+Entreprise -> p
+
+
+@enduml
