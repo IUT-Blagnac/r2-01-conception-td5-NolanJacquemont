@@ -32,20 +32,20 @@ class Artisan {
     salaireHoraire
     coordonnees
 }
-Artisan : getSalaireHoraire()
+Artisan : + getSalaireHoraire()
 class Chantier {
     idChantier
     dateDeb
     dateFin
     adresse
 }
-
 class Affectation {
     idAffectation
     nbHeures
     debMission
     finMission
 }
+Affectation : + getNbHeures()
 
 Entreprise "1" -- "0..*" Chantier : Gérer_C
 Entreprise "1" -- "0..*" Artisan : Gérer_A
@@ -54,7 +54,7 @@ Payer .. (Entreprise, Artisan)
 class Payer {
     
 }
-Payer : getPayeArtisan()
+Payer : + getPayeArtisan()
 Entreprise "1" --- "0..*" Affectation : Créer
 Affectation "0..*" --- "1" Chantier : Concerner
 Affectation "0..*" --- "1" Artisan : Travailler
