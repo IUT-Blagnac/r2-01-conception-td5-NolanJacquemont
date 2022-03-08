@@ -1,21 +1,23 @@
 @startuml UC
 
-usecase c as "Gérer ses chantiers"
-usecase a as "Gérer ses artisans"
-usecase ac as "Gérer quels artisans sont \naffectés à quels chantiers"
-usecase p as "Calculer automatiquement la \npaye d’un artisan donné \npour un chantier donné"
+usecase g as "Gérer"
+usecase p as "Payer"
+usecase a as "Affecter"
 
-actor Entreprise 
+actor Entreprise
+actor Artisan
+actor Chantier
 
 'Pour aligner les 2 acteurs :
-c -[hidden]-> a
-a -[hidden]-> ac
-ac -[hidden]-> p
+p -[hidden]-> g
 
-Entreprise -> c
-Entreprise -> a
-Entreprise -> ac
+Entreprise -> g
 Entreprise -> p
-
+a <- Entreprise
+g --> Artisan
+g --> Chantier
+p -> Artisan
+a -> Artisan
+a -> Chantier
 
 @enduml
