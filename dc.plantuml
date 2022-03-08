@@ -1,0 +1,62 @@
+@startuml DC
+
+hide circle
+hide empty members
+hide empty methods
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+	BackgroundColor AliceBlue
+	BorderColor DarkSlateGray
+	ArrowColor Black
+	FontColor Black
+	FontSize 12
+	FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+class Entreprise {
+    idEntreprise
+    nomEntreprise
+    nbEmployés
+}
+class Artisan {
+    idArtisan
+    nomArtisan
+    salaireHoraire
+    coordonnees
+}
+Artisan : + getSalaireHoraire()
+class Chantier {
+    idChantier
+    dateDeb
+    dateFin
+    adresse
+}
+class Affectation {
+    idAffectation
+    nbHeures
+    debMission
+    finMission
+}
+Affectation : + getNbHeures()
+
+Entreprise "1" -- "0..*" Chantier : Gérer_C
+Entreprise "1" -- "0..*" Artisan : Gérer_A
+Entreprise "1" --- "0..*" Artisan
+Payer .. (Entreprise, Artisan)
+class Payer {
+    
+}
+Payer : + getPayeArtisan()
+Entreprise "1" --- "0..*" Affectation : Créer
+Affectation "0..*" --- "1" Chantier : Concerner
+Affectation "0..*" --- "1" Artisan : Travailler
+
+@enduml

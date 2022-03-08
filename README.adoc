@@ -30,18 +30,14 @@ Ce TP vise à reprendre les diagrammes des UC et les lier avec le diagramme de c
 
 == À propos...
 
-NOM:: DOE
+NOM:: Jacquemont
 
-Prénom:: John
+Prénom:: Nolan
 
 Groupe #::
 
 [%interactive]
-- [X] Enseignants
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
+- [ ] 4B
 
 == Mise en place
 
